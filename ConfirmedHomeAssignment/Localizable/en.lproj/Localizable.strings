@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  ConfirmedHomeAssignment
+
+  Created by Igor Vedeneev on 17.09.2021.
+  
+*/
+
+"search" = "Search";
+"%lld number_of_reviews" = "%lld reviews";
+"add_review" = "ADD REVIEW";
+"no_reviews" = "There is no reviews. Be first!";
+"create_review.rating_title" = "How do you like it";
+"create_review.message_title" = "What do you think about it";
+"submit" = "SUBMIT";
+"empty_review_message" = "Review text must not be empty";
+"review_was_sent" = "Your review was sent!";

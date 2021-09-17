@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  ConfirmedHomeAssignment
+
+  Created by Igor Vedeneev on 17.09.2021.
+  
+*/
+
+"search" = "Поиск";
+"%lld number_of_reviews" = "%lld отзывов"; //TODO: strings dict?
+"no_reviews" = "Еще нет отзывов. Будь первым!";
+"add_review" = "ДОБАВИТЬ ОТЗЫВ";
+"create_review.rating_title" = "Насколько вам нравится";
+"create_review.message_title" = "Что вы думаете?";
+"submit" = "ОТПРАВИТЬ";
+"empty_review_message" = "Текст отзыва не может быть пустым";
+"review_was_sent" = "Отзыв был отправлен";
