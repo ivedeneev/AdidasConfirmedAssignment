@@ -8,6 +8,7 @@
 import UIKit
 import SwiftUI
 import Combine
+import Resolver
 
 protocol ProductListView: AnyObject {
     func didloadProducts(products: [Product])
@@ -16,14 +17,14 @@ protocol ProductListView: AnyObject {
 
 final class ProductListViewController: UIViewController {
     
-    var presenter: ProductListPresenter?
+    @OptionalInjected var presenter: ProductListPresenter?
     private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     private var products = [Product]()
     private let searchBar = UISearchBar()
+    private let refreshControl = UIRefreshControl()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter = ProductListPresenterImpl()
         presenter?.view = self
         setupCollectionView()
         setupSearchBar()
@@ -41,6 +42,9 @@ final class ProductListViewController: UIViewController {
         collectionView.delegate = self
         collectionView.backgroundColor = .systemBackground
         collectionView.register(ProductListCell.self, forCellWithReuseIdentifier: ProductListCell.reuseIdentifier)
+        
+        collectionView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
     }
     
     private func setupSearchBar() {
@@ -54,17 +58,23 @@ final class ProductListViewController: UIViewController {
         emptyView.view.frame = collectionView.bounds
         return emptyView.view
     }
+    
+    @objc private func refresh() {
+        presenter?.searchProducts(query: searchBar.text ?? "")
+    }
 }
 
 extension ProductListViewController: ProductListView {
     func didloadProducts(products: [Product]) {
+        refreshControl.endRefreshing()
         self.products = products
         collectionView.reloadData()
         collectionView.backgroundView = products.isEmpty ? emptyView(with: "No products") : nil
     }
     
     func didFailLoadProducts(error: CError) {
-        collectionView.backgroundView = emptyView(with: "Error")
+        refreshControl.endRefreshing()
+        collectionView.backgroundView = emptyView(with: error.localizedDescription)
     }
 }
 

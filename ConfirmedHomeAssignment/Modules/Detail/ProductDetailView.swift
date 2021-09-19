@@ -47,6 +47,12 @@ struct ProductDetailView: View {
                         .listSeparatorNone()
                     
                 } else {
+                    if viewModel.error != nil {
+                        Text(viewModel.error!)
+                            .centerHorizontally()
+                            .listSeparatorNone()
+                    }
+                    
                     if viewModel.reviews.isEmpty {
                         Text("no_reviews")
                             .centerHorizontally()

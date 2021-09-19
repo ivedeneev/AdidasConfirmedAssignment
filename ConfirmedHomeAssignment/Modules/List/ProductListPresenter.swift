@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import Resolver
 
 protocol ProductListPresenter {
     var view: ProductListView? { get set }
@@ -18,13 +19,9 @@ protocol ProductListPresenter {
 class ProductListPresenterImpl: ProductListPresenter {
     
     weak var view: ProductListView?
-    private let productSerivce: ProductService
+    @Injected private var productSerivce: ProductService
     private var cancellable: Cancellable?
     private var products = [Product]()
-    
-    init(productSerivce: ProductService = ProductServiceImpl()) {
-        self.productSerivce = productSerivce
-    }
     
     func loadProducts() {
         cancellable = productSerivce.products()

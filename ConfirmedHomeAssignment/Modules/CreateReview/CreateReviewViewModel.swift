@@ -8,6 +8,7 @@
 import Combine
 import Foundation
 import SwiftUI
+import Resolver
 
 final class CreateReviewViewModel: ObservableObject {
     @Published var isLoading = false
@@ -15,13 +16,12 @@ final class CreateReviewViewModel: ObservableObject {
     @Published var isErrorPresented = false
     private(set) var error: String?
 
-    private let reviewService: ReviewsService
+    @Injected private var reviewService: ReviewsService
     private let productId: String
     private var cancellables = Set<AnyCancellable>()
     
-    init(productId: String, reviewService: ReviewsService = ReviewsServiceImpl()) {
+    init(productId: String) {
         self.productId = productId
-        self.reviewService = reviewService
         
         $isErrorPresented.filter { !$0 }.sink { [weak self] _ in
             self?.error = nil
@@ -38,12 +38,12 @@ final class CreateReviewViewModel: ObservableObject {
         isLoading = true
         reviewService.postReview(productId: productId, message: text, rating: rating)
             .receive(on: RunLoop.main)
-            .delay(for: 0.3, scheduler: RunLoop.main)
+            .delay(for: 0.3, scheduler: RunLoop.main) // TODO: remove after release
             .sink { [weak self] (completion) in
                 self?.isLoading = false
                 switch completion {
                 case .failure(let error):
-                    self?.error = "Error"
+                    self?.error = error.localizedDescription
                     self?.isErrorPresented = true
                 default:
                     break

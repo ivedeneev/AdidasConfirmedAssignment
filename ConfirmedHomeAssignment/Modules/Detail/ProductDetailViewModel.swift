@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import Resolver
 
 final class ProductDetailViewModel: ObservableObject {
     
@@ -35,16 +36,16 @@ final class ProductDetailViewModel: ObservableObject {
     }
     
     private let product: Product
-    private let reviewsService: ReviewsService
+    @Injected private var reviewsService: ReviewsService
     private var cancellables = Set<AnyCancellable>()
     
-    init(product: Product, reviewsService: ReviewsService = ReviewsServiceImpl()) {
+    init(product: Product) {
         self.product = product
-        self.reviewsService = reviewsService
     }
     
     func loadReviews() {
         isLoading = true
+        error = nil
         reviewsService.reviews(for: product.id)
             .receive(on: RunLoop.main)
             .delay(for: 1, scheduler: RunLoop.main)

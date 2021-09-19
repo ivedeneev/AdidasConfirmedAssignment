@@ -7,7 +7,11 @@
 
 import Foundation
 
-final class RequestBuilder {
+protocol RequestBuilder {
+    func urlRequest(for endpoint: RequestType) -> URLRequest
+}
+
+final class RequestBuilderImpl: RequestBuilder {
     func urlRequest(for endpoint: RequestType) -> URLRequest {
         guard var url = URL(string: endpoint.baseUrl) else {
             fatalError("Provided base url [\(endpoint.baseUrl)] has incorrect format") // there is no way if its ok to application logic and we should treat it like normal error.

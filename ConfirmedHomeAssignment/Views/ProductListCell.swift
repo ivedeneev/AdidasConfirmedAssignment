@@ -8,22 +8,6 @@
 import UIKit
 import SDWebImage
 
-protocol ReusableCell {
-    associatedtype ViewModel
-    static var reuseIdentifier: String { get }
-    func configure(viewModel: ViewModel)
-}
-
-extension ReusableCell {
-    static var reuseIdentifier: String {
-        String(describing: self)
-    }
-}
-
-struct ABTests {
-    static var useGrayProductListBG = false
-}
-
 final class ProductListCell: UICollectionViewCell {
     
     private let imageView = UIImageView()

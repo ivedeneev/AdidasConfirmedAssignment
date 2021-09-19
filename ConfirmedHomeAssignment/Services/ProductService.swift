@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import Resolver
 
 protocol ProductService {
     func products() -> AnyPublisher<[Product], CError>
@@ -14,13 +15,8 @@ protocol ProductService {
 
 final class ProductServiceImpl: ProductService {
     
-    private let requestBuilder: RequestBuilder
-    private let networkClient: NetworkClient
-    
-    init(requestBuilder: RequestBuilder = .init(), networkClient: NetworkClient = NetworkClientImpl()) {
-        self.requestBuilder = requestBuilder
-        self.networkClient = networkClient
-    }
+    @Injected private var requestBuilder: RequestBuilder
+    @Injected private var networkClient: NetworkClient
     
     func products() -> AnyPublisher<[Product], CError> {
         let request = requestBuilder.urlRequest(for: Request.products)

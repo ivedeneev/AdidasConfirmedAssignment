@@ -6,14 +6,24 @@
 //
 
 import UIKit
-import Combine
+import Resolver
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        setupDependensies()
         return true
+    }
+    
+    private func setupDependensies() {
+        Resolver.main.register(factory: { ProductServiceImpl() as ProductService })
+        Resolver.main.register(factory: { ReviewsServiceImpl() as ReviewsService })
+        Resolver.main.register(factory: { RequestBuilderImpl() as RequestBuilder })
+        Resolver.main.register(factory: { NetworkClientImpl() as NetworkClient })
+        Resolver.main.register(factory: { ProductListPresenterImpl() as ProductListPresenter? })
+        Resolver.main.register(factory: { URLSession.shared as URLSession })
     }
 
     // MARK: UISceneSession Lifecycle

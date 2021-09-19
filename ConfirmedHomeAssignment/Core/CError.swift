@@ -12,9 +12,15 @@ enum CError: Error {
     case http
     case decoding(DecodingError)
     case unknown
+    case custom(String)
     
     var localizedDescription: String? {
-        "Error!!!" //TODO: proper error descriptions
+        switch self {
+        case .custom(let reason):
+            return reason
+        default:
+            return "Error!!!" //TODO: proper error descriptions
+        }
     }
 }
 

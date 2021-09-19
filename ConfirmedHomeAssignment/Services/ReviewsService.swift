@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import Resolver
 
 protocol ReviewsService {
     func reviews(for productId: String) -> AnyPublisher<[Review], CError>
@@ -15,13 +16,8 @@ protocol ReviewsService {
 
 final class ReviewsServiceImpl: ReviewsService {
     
-    private let requestBuilder: RequestBuilder
-    private let networkClient: NetworkClient
-    
-    init(requestBuilder: RequestBuilder = .init(), networkClient: NetworkClient = NetworkClientImpl()) {
-        self.requestBuilder = requestBuilder
-        self.networkClient = networkClient
-    }
+    @Injected private var requestBuilder: RequestBuilder
+    @Injected var networkClient: NetworkClient
     
     func reviews(for productId: String) -> AnyPublisher<[Review], CError> {
         let request = requestBuilder.urlRequest(for: Request.reviews(productId: productId))

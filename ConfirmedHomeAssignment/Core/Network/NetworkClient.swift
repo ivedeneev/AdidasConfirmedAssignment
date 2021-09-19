@@ -45,10 +45,13 @@ final class NetworkClientImpl: NetworkClient {
                 switch error {
                 case let decodingError as DecodingError:
                     return .decoding(decodingError)
+                case let error as NSError:
+                    return .custom(error.localizedDescription)
                 default:
                     return .unknown
                 }
             }
+            .subscribe(on: DispatchQueue.global(qos: .utility))
             .eraseToAnyPublisher()
     }
 }

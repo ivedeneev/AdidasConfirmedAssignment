@@ -15,3 +15,5 @@
 "submit" = "SUBMIT";
 "empty_review_message" = "Review text must not be empty";
 "review_was_sent" = "Your review was sent!";
+"go_back" = "Go back";
+"got_it" = "Got it";

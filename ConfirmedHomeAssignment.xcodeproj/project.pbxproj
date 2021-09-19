@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		D60A5E6126F270DD00883360 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60A5E6026F270DD00883360 /* AppDelegate.swift */; };
 		D60A5E6326F270DD00883360 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60A5E6226F270DD00883360 /* SceneDelegate.swift */; };
-		D60A5E6526F270DD00883360 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60A5E6426F270DD00883360 /* ViewController.swift */; };
+		D60A5E6526F270DD00883360 /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60A5E6426F270DD00883360 /* ProductListViewController.swift */; };
 		D60A5E6826F270DD00883360 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D60A5E6626F270DD00883360 /* Main.storyboard */; };
 		D60A5E6A26F270DD00883360 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D60A5E6926F270DD00883360 /* Assets.xcassets */; };
 		D60A5E6D26F270DD00883360 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D60A5E6B26F270DD00883360 /* LaunchScreen.storyboard */; };
@@ -29,7 +29,6 @@
 		D60A5EE726F34D6400883360 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60A5EE626F34D6400883360 /* ProductDetailView.swift */; };
 		D60A5EF026F34DD900883360 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = D60A5EEF26F34DD900883360 /* SDWebImageSwiftUI */; };
 		D60A5EF526F3627C00883360 /* ReviewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60A5EF426F3627C00883360 /* ReviewsService.swift */; };
-		D60A5EFB26F3654D00883360 /* CombineExt in Frameworks */ = {isa = PBXBuildFile; productRef = D60A5EFA26F3654D00883360 /* CombineExt */; };
 		D60A5F0826F3926A00883360 /* ProductDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60A5F0726F3926A00883360 /* ProductDetailViewModel.swift */; };
 		D60A5F0D26F392F200883360 /* ProductListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60A5F0C26F392F200883360 /* ProductListPresenter.swift */; };
 		D60A5F1226F3A17600883360 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60A5F1126F3A17600883360 /* ActionButton.swift */; };
@@ -45,6 +44,10 @@
 		D60A601C26F5065C00883360 /* CreateReviewViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60A601B26F5065C00883360 /* CreateReviewViewModelTests.swift */; };
 		D60A602226F50A2200883360 /* HCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60A602126F50A2200883360 /* HCenter.swift */; };
 		D60A602A26F50A4400883360 /* ListSeparatorNone.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60A602926F50A4400883360 /* ListSeparatorNone.swift */; };
+		D60A604626F5178C00883360 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60A604526F5178C00883360 /* Color.swift */; };
+		D60A604C26F51D1000883360 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60A604B26F51D1000883360 /* Reusable.swift */; };
+		D60A605F26F7329500883360 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60A605E26F7329500883360 /* DIContainer.swift */; };
+		D60A606526F7335C00883360 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = D60A606426F7335C00883360 /* Resolver */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +71,7 @@
 		D60A5E5D26F270DC00883360 /* ConfirmedHomeAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConfirmedHomeAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D60A5E6026F270DD00883360 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D60A5E6226F270DD00883360 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D60A5E6426F270DD00883360 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D60A5E6426F270DD00883360 /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
 		D60A5E6726F270DD00883360 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D60A5E6926F270DD00883360 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D60A5E6C26F270DD00883360 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -108,6 +111,9 @@
 		D60A601B26F5065C00883360 /* CreateReviewViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReviewViewModelTests.swift; sourceTree = "<group>"; };
 		D60A602126F50A2200883360 /* HCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCenter.swift; sourceTree = "<group>"; };
 		D60A602926F50A4400883360 /* ListSeparatorNone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSeparatorNone.swift; sourceTree = "<group>"; };
+		D60A604526F5178C00883360 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		D60A604B26F51D1000883360 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		D60A605E26F7329500883360 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +121,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D60A606526F7335C00883360 /* Resolver in Frameworks */,
 				D60A5EF026F34DD900883360 /* SDWebImageSwiftUI in Frameworks */,
-				D60A5EFB26F3654D00883360 /* CombineExt in Frameworks */,
 				D60A5EDC26F3395F00883360 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,6 +218,7 @@
 				D60A601226F4E3B200883360 /* Network */,
 				D60A601126F4E3AD00883360 /* UI */,
 				D60A5EAE26F2722200883360 /* CError.swift */,
+				D60A605E26F7329500883360 /* DIContainer.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -253,7 +260,7 @@
 		D60A5F0526F3924A00883360 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				D60A5E6426F270DD00883360 /* ViewController.swift */,
+				D60A5E6426F270DD00883360 /* ProductListViewController.swift */,
 				D60A5F0C26F392F200883360 /* ProductListPresenter.swift */,
 			);
 			path = List;
@@ -290,6 +297,8 @@
 			isa = PBXGroup;
 			children = (
 				D60A600C26F4E39A00883360 /* Font.swift */,
+				D60A604526F5178C00883360 /* Color.swift */,
+				D60A604B26F51D1000883360 /* Reusable.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -332,7 +341,7 @@
 			packageProductDependencies = (
 				D60A5EDB26F3395F00883360 /* SDWebImage */,
 				D60A5EEF26F34DD900883360 /* SDWebImageSwiftUI */,
-				D60A5EFA26F3654D00883360 /* CombineExt */,
+				D60A606426F7335C00883360 /* Resolver */,
 			);
 			productName = ConfirmedHomeAssignment;
 			productReference = D60A5E5D26F270DC00883360 /* ConfirmedHomeAssignment.app */;
@@ -409,7 +418,7 @@
 			packageReferences = (
 				D60A5EDA26F3395F00883360 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				D60A5EEE26F34DD900883360 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
-				D60A5EF926F3654D00883360 /* XCRemoteSwiftPackageReference "CombineExt" */,
+				D60A606326F7335C00883360 /* XCRemoteSwiftPackageReference "Resolver" */,
 			);
 			productRefGroup = D60A5E5E26F270DC00883360 /* Products */;
 			projectDirPath = "";
@@ -458,10 +467,11 @@
 			files = (
 				D60A600826F4DCFA00883360 /* CreateReviewViewModel.swift in Sources */,
 				D60A5E9D26F2710600883360 /* Review.swift in Sources */,
-				D60A5E6526F270DD00883360 /* ViewController.swift in Sources */,
+				D60A5E6526F270DD00883360 /* ProductListViewController.swift in Sources */,
 				D60A600D26F4E39A00883360 /* Font.swift in Sources */,
 				D60A601726F4E7B300883360 /* ActivityIndicator.swift in Sources */,
 				D60A5ED026F2888000883360 /* ProductListCell.swift in Sources */,
+				D60A605F26F7329500883360 /* DIContainer.swift in Sources */,
 				D60A602226F50A2200883360 /* HCenter.swift in Sources */,
 				D60A5FE426F4D82500883360 /* TextView.swift in Sources */,
 				D60A5FDF26F47E5C00883360 /* RatingView.swift in Sources */,
@@ -473,8 +483,10 @@
 				D60A5E6126F270DD00883360 /* AppDelegate.swift in Sources */,
 				D60A5F0826F3926A00883360 /* ProductDetailViewModel.swift in Sources */,
 				D60A5F1726F3A19800883360 /* ReviewView.swift in Sources */,
+				D60A604626F5178C00883360 /* Color.swift in Sources */,
 				D60A5EC526F279B700883360 /* RequestBuilder.swift in Sources */,
 				D60A5F0D26F392F200883360 /* ProductListPresenter.swift in Sources */,
+				D60A604C26F51D1000883360 /* Reusable.swift in Sources */,
 				D60A602A26F50A4400883360 /* ListSeparatorNone.swift in Sources */,
 				D60A5EAF26F2722200883360 /* CError.swift in Sources */,
 				D60A5FDA26F3D62600883360 /* CreateReviewView.swift in Sources */,
@@ -850,12 +862,12 @@
 				minimumVersion = 2.0.2;
 			};
 		};
-		D60A5EF926F3654D00883360 /* XCRemoteSwiftPackageReference "CombineExt" */ = {
+		D60A606326F7335C00883360 /* XCRemoteSwiftPackageReference "Resolver" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/CombineCommunity/CombineExt.git";
+			repositoryURL = "https://github.com/hmlongco/Resolver";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.3.0;
+				minimumVersion = 1.4.4;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -871,10 +883,10 @@
 			package = D60A5EEE26F34DD900883360 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
 		};
-		D60A5EFA26F3654D00883360 /* CombineExt */ = {
+		D60A606426F7335C00883360 /* Resolver */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D60A5EF926F3654D00883360 /* XCRemoteSwiftPackageReference "CombineExt" */;
-			productName = CombineExt;
+			package = D60A606326F7335C00883360 /* XCRemoteSwiftPackageReference "Resolver" */;
+			productName = Resolver;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -13,7 +13,7 @@ struct EmptyView: View {
     
     var body: some View {
         VStack {
-            Text(message)
+            Text(message).multilineTextAlignment(.center)
         }
     }
 }

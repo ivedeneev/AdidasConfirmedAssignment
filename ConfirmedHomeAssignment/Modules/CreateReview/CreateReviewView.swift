@@ -37,7 +37,7 @@ struct CreateReviewView: View {
                     HStack {
                         Text("review_was_sent")
                         Spacer()
-                        Button("Got back") {
+                        Button("go_back") {
                             presentationMode.wrappedValue.dismiss()
                         }
                     }.padding()
@@ -46,7 +46,7 @@ struct CreateReviewView: View {
                         HStack {
                             Text(viewModel.error!)
                             Spacer()
-                            Button("Got it") {
+                            Button("got_it") {
                                 viewModel.isErrorPresented = false //TODO: animation
                             }
                         }.padding()
@@ -60,6 +60,5 @@ struct CreateReviewView: View {
             }
         }
         .padding()
-        
     }
 }
